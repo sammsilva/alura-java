@@ -6,11 +6,10 @@ import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 
-public class Test2 {
+public class TestLambdas {
 
     public static void main(String[] args) {
 
@@ -45,30 +44,12 @@ public class Test2 {
         lista.add(cc3);
         lista.add(cc4);
 
-              //classe anonimas
-        lista.sort( new Comparator<Conta>() {
-            @Override
-            public int compare(Conta c1, Conta c2) {
-                String nomeC1 = c1.getTitular().getNome();
-                String nomeC2 = c2.getTitular().getNome();
-                return nomeC1.compareTo(nomeC2);
-            }
-        });
+        //lambdas
+        lista.sort((c1,  c2) -> c1.getTitular().getNome().compareTo(c2.getTitular().getNome()) );
+        lista.forEach(x-> System.out.println("Conta : " + x + ", " + x.getTitular().getNome()));
+        lista.sort(( c1,  c2) -> Integer.compare(c1.getNumero(), c2.getNumero()));
+        lista.forEach(x-> System.out.println("Conta : " + x + ", " + x.getTitular().getNome()));
 
-        for (Conta c : lista) {
-            System.out.println("Conta : " + c + ", " + c.getTitular().getNome());
-        }
-
-        lista.sort(new Comparator<Conta>(){
-            @Override
-            public int compare(Conta c1, Conta c2) {
-                return Integer.compare(c1.getNumero(), c2.getNumero());
-            }
-        });
-
-        for (Conta c : lista) {
-            System.out.println("Conta : " + c + ", " + c.getTitular().getNome());
-        }
     }
 }
 

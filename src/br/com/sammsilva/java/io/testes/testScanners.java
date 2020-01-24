@@ -27,10 +27,10 @@ public class testScanners {
             linhaScanner.useLocale(Locale.US);
             linhaScanner.useDelimiter(",");
             String valor1 = linhaScanner.next();
-            String valor2 = linhaScanner.next();
-            String valor3 = linhaScanner.next();
+            int valor2 = linhaScanner.nextInt();
+            int valor3 = linhaScanner.nextInt();
             String valor4 = linhaScanner.next();
-            String valor5 = linhaScanner.next();
+            double valor5 = linhaScanner.nextDouble();
             System.out.println("valor1 = " + valor1 + " valor2 = " + valor2 + " valor3 = " + valor3 + " valor4 = " + valor4 +" valor 5 = "+ valor5);
         }
         scanner.close();

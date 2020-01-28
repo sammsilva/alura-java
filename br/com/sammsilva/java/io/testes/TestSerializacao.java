@@ -2,9 +2,7 @@ package br.com.sammsilva.java.io.testes;
 
 import br.com.bytebank.banco.modelo.Cliente;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class TestSerializacao {
 
@@ -32,6 +30,11 @@ public class TestSerializacao {
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("cliente.bin"));
         oos.writeObject(cliente);
         oos.close();
+
+
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("cliente.bin"));
+        Cliente c = (Cliente)ois.readObject();
+        System.out.println( c.getNome());
 
     }
 }

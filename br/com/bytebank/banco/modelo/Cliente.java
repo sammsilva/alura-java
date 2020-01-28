@@ -11,6 +11,8 @@ import java.io.Serializable;
  */
 public class Cliente  implements Serializable {
 
+    private static final long serialVersionUID = 4L;
+
     private String nome;
     private String cpf;
     private String profissao;
@@ -18,6 +20,11 @@ public class Cliente  implements Serializable {
     public String getNome() {
         return nome;
     }
+
+    public String getNomeCpf(){
+        return this.nome + " " + this.cpf;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }

@@ -34,6 +34,5 @@ public class testScanners {
             System.out.println("valor1 = " + valor1 + " valor2 = " + valor2 + " valor3 = " + valor3 + " valor4 = " + valor4 +" valor 5 = "+ valor5);
         }
         scanner.close();
-
     }
 }
